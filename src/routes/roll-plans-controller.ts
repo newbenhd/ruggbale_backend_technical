@@ -91,6 +91,7 @@ async function getNextRollPlans(
     });
     const { rows } = await pool.query(query);
     const { plan, length } = slicePlans(roll_length, rows);
+    // Todo: generate unique id after successfully save record to DB.
     res.status(200).json({
       roll_id: 123,
       length,
